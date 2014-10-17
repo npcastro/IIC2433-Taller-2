@@ -1,16 +1,24 @@
 from sklearn.metrics import confusion_matrix
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 eros_filename = 'xm_visual_xtr.csv'
 
-def plot_confusion_matrix(y_true, y_pred, title='Confusion Matrix'):
+def plot_confusion_matrix(y_true, y_pred, title='Confusion Matrix', normed = False):
     """
     Recibe los arreglos de las clases correctas y hace un plot de la matriz de
     confusion usando colores
     """
     # Compute confusion matrix
     cm = confusion_matrix(y_true, y_pred)
+
+    if normed:
+        cm = cm.astype(float)
+        for i in xrange(len(cm)):
+            col = cm[:,i]
+            suma = np.sum(col)
+            cm[:,i] = col/ float(suma)
 
     # Show confusion matrix in a separate window
     plt.matshow(cm)
