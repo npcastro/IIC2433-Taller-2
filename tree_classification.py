@@ -15,6 +15,7 @@ if __name__ == '__main__':
 
 	num_classes = len(y.unique())
 
+	# Guardamos las predicciones y clases reales de todos los fold en una lista
 	y_pred_total = []
 	y_test_total = []
 

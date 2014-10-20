@@ -13,12 +13,26 @@ def plot_confusion_matrix(y_true, y_pred, title='Confusion Matrix', normed = Fal
     # Compute confusion matrix
     cm = confusion_matrix(y_true, y_pred)
 
+    # if normed:
+    #     cm = cm.astype(float)
+    #     for i in xrange(len(cm)):
+    #         col = cm[:,i]
+    #         suma = np.sum(col)
+            
+    #         if suma != 0:
+    #             cm[:,i] = col/ float(suma)
+    #         else:
+    #             cm[:,i] = np.zeros(cm[:,i].shape)
     if normed:
         cm = cm.astype(float)
         for i in xrange(len(cm)):
-            col = cm[:,i]
-            suma = np.sum(col)
-            cm[:,i] = col/ float(suma)
+            row = cm[i,:]
+            suma = np.sum(row)
+            
+            if suma != 0:
+                cm[i,:] = row/ float(suma)
+            else:
+                cm[i,:] = np.zeros(cm[i,:].shape)
 
     # Show confusion matrix in a separate window
     plt.matshow(cm)
