@@ -1,0 +1,52 @@
+BV:
+- 0
+- N: 0
+CEPH:
+- 1
+- 1O: 0
+  1O/2O: 1
+  1O/2O/3O: 2
+  1O/3O: 3
+  2O: 4
+  F: 5
+  F/1O: 6
+  F/1O/2O: 7
+DSCT:
+- 2
+- MULTIMODE: 0
+  SINGLEMODE: 1
+EB:
+- 3
+- EC: 0
+  ED: 1
+  ED_ESD: 2
+  ED_TEB: 3
+  ED_VAR: 4
+  ELL_EC: 5
+  ESD: 6
+  ESD_DPV: 7
+LPV:
+- 4
+- Mira_AGB_C: 0
+  Mira_AGB_O: 1
+  OSARG_AGB_C: 2
+  OSARG_AGB_O: 3
+  OSARG_RGB_C: 4
+  OSARG_RGB_O: 5
+  SRV_AGB_C: 6
+  SRV_AGB_O: 7
+QSO:
+- 5
+- N: 0
+RRL:
+- 6
+- RRab: 0
+  RRc: 1
+  RRd: 2
+  RRe: 3
+T2CEPH:
+- 7
+- BLHer: 0
+  RVTau: 1
+  WVir: 2
+  pWVir: 3
